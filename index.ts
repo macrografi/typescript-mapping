@@ -1,10 +1,6 @@
 // Import stylesheets
 import './style.css';
 
-// Write TypeScript code!
-const appDiv: HTMLElement = document.getElementById('app');
-appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
-
 // Map Operations
 let nameAgeMapping = new Map<string, number>();
 
@@ -23,3 +19,26 @@ for (let value of nameAgeMapping.values()) {
 for (let entry of nameAgeMapping.entries()) {
   console.log('entry is : ', entry);
 }
+
+for (let [key, value] of nameAgeMapping) {
+  console.log(key, value);
+}
+
+//
+const map1 = new Map<string, string | number>([
+  ['name', 'John'],
+  ['age', 30],
+  ['country', 'Germany'],
+]);
+
+map1.set('country', 'Turkey');
+//console.log(map1.has('name'));
+
+const country = map1.get('country');
+
+if (country === 'string') {
+  console.log(country.toUpperCase());
+  console.log("dfgdfg",country);
+}
+
+
