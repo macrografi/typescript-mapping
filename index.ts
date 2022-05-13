@@ -38,7 +38,45 @@ const country = map1.get('country');
 
 if (country === 'string') {
   console.log(country.toUpperCase());
-  console.log("dfgdfg",country);
+  console.log('dfgdfg', country);
 }
 
+const myMap = new Map();
 
+const keyString = 'a string';
+const keyObj = {};
+const keyFunc = () => {};
+
+// setting the values
+myMap.set(keyString, "value associated with 'a string'");
+myMap.set(keyObj, 'value associated with keyObj');
+myMap.set(keyFunc, 'value associated with keyFunc');
+
+console.log('my map size : ', myMap.size);
+
+// getting the values
+myMap.get(keyString); // "value associated with 'a string'"
+myMap.get(keyObj); // "value associated with keyObj"
+myMap.get(keyFunc); // "value associated with keyFunc"
+
+myMap.forEach((value, key) => {
+  console.log(key + ' = ' + value);
+});
+
+// merged map
+const first = new Map([
+  [1, 'one'],
+  [2, 'two'],
+  [3, 'three'],
+]);
+
+const second = new Map([
+  [1, 'uno'],
+  [2, 'dos'],
+]);
+
+const merged = new Map([...first, ...second, [1, 'eins']]);
+
+merged.forEach((value, key) => {
+  console.log(key + ' = ' + value);
+});
